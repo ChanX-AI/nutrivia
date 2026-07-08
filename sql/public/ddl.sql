@@ -8,6 +8,27 @@
 		The drop command is used before creating a table
 */
 
+-- public nutrient
+DROP TABLE IF EXISTS public.nutrient;
+
+CREATE TABLE public.nutrient (
+    id integer PRIMARY KEY,
+    name text,
+    unit_name text,
+    nutrient_nbr text,
+    rank text
+);
+
+-- public food category
+DROP TABLE IF EXISTS public.food_category;
+
+CREATE TABLE public.food_category (
+    id integer PRIMARY KEY,
+    code integer,
+    description text
+);
+
+
 -- food data types
 DROP TABLE IF EXISTS public.food_data_types;
 
