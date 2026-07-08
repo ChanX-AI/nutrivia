@@ -1,0 +1,84 @@
+/*
+================================================================
+	Public Layer
+================================================================
+	-> All the core food tables are loaded
+	
+	** Warnings **
+		The truncate command is used before loading into table
+*/
+
+
+-- 	food data types
+-- =============================================================
+TRUNCATE TABLE public.food_data_types;
+
+INSERT INTO public.food_data_types
+VALUES
+(1, 'foundation'),
+(2, 'sr legacy');
+
+-- 	foods
+-- =============================================================
+TRUNCATE TABLE public.foods;
+
+INSERT INTO public.foods
+SELECT
+	f.fdc_id AS id,
+	f.description AS name,
+	f.food_category_id AS category_id,
+	1 AS data_type_id
+FROM foundation_stg.food f
+JOIN foundation_stg.foundation_food ff
+	ON f.fdc_id = ff.fdc_id
+UNION ALL
+SELECT
+	f.fdc_id AS id,
+	f.description AS name,
+	f.food_category_id AS category_id,
+	2 AS data_type_id
+FROM sr_legacy_stg.food f
+JOIN sr_legacy_stg.sr_legacy_food sf
+	ON f.fdc_id = sf.fdc_id;
+	
+-- core nutrients
+-- =============================================================
+TRUNCATE TABLE public.core_nutrients;
+
+INSERT INTO public.core_nutrients
+SELECT
+	id,
+	name,
+	unit_name AS units
+FROM public.nutrient
+WHERE id IN (1008, 1003, 1004, 1079, 2000, 1253, 1051, 1005);
+
+-- food nutrients
+-- =============================================================
+TRUNCATE TABLE public.food_nutrients;
+
+INSERT INTO public.food_nutrients
+SELECT
+	f.fdc_id AS food_id,
+	n.id AS nutrient_id,
+	fn.amount
+FROM foundation_stg.food f
+JOIN foundation_stg.foundation_food ff
+	ON f.fdc_id = ff.fdc_id
+JOIN foundation_stg.food_nutrient fn
+	ON f.fdc_id = fn.fdc_id
+JOIN public.core_nutrients n
+	ON fn.nutrient_id = n.id
+UNION ALL
+SELECT
+	f.fdc_id AS food_id,
+	n.id AS nutrient_id,
+	fn.amount
+FROM sr_legacy_stg.food f
+JOIN sr_legacy_stg.sr_legacy_food sf
+	ON f.fdc_id = sf.fdc_id
+JOIN sr_legacy_stg.food_nutrient fn
+	ON f.fdc_id = fn.fdc_id
+JOIN public.core_nutrients n
+	ON fn.nutrient_id = n.id;
+	
