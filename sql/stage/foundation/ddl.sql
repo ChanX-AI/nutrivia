@@ -3,7 +3,6 @@
 	Stage Layer foundation_stg
 ================================================================
 	-> All the core foundation food tables are created and loaded
-	-> There are two tables that don't belong to this stage layer but created and loaded
 	
 	** Warnings **
 		The drop command is used before creating a table
@@ -19,30 +18,9 @@
 --CREATE SCHEMA IF NOT EXISTS foundation_stg;
 --CREATE SCHEMA IF NOT EXISTS sr_legacy_stg;
 
--- public nutrient
-DROP TABLE IF EXISTS public.nutrient;
-
-CREATE TABLE public.nutrient (
-    id integer PRIMARY KEY,
-    name text,
-    unit_name text,
-    nutrient_nbr text,
-    rank text
-);
-
--- public food category
-DROP TABLE IF EXISTS public.food_category;
-
-CREATE TABLE public.food_category (
-    id integer PRIMARY KEY,
-    code integer,
-    description text
-);
-
 -- =====================================
 -- foundation food tables
 -- ======================================
-
 
 -- food
 DROP TABLE IF EXISTS foundation_stg.food;
