@@ -1,3 +1,19 @@
+/*
+================================================================
+	Stage Layer sr_legacy_stg
+================================================================
+	-> All the core sr legacy food tables are created and loaded
+	
+	** Warnings **
+		The drop command is used before creating a table
+	
+	Note: 
+		* All tables are loaded accordingly with the USDA food data after creation
+
+*/
+
+
+
 -- =====================================
 -- sr legacy food tables
 -- ======================================
