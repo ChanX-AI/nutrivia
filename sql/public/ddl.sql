@@ -72,5 +72,21 @@ CREATE TABLE public.food_nutrients (
 	amount integer
 );
 
+-- food info view
 
-
+CREATE VIEW public.vw_food_info
+SELECT 
+	f.id AS id, 
+	MAX(CASE WHEN n.id = 1008 THEN fn.amount END) AS energy_kcal,
+	MAX(CASE WHEN n.id = 1003 THEN fn.amount END) AS protein_gm,
+	MAX(CASE WHEN n.id = 1005 THEN fn.amount END) AS carbs_gm,
+	MAX(CASE WHEN n.id = 1004 THEN fn.amount END) AS fats_gm,
+	MAX(CASE WHEN n.id = 2000 THEN fn.amount END) AS sugar_gm,
+	MAX(CASE WHEN n.id = 1253 THEN fn.amount END) AS cholesterol_mg,
+	MAX(CASE WHEN n.id = 1051 THEN fn.amount END) AS water_gm
+FROM public.foods f
+JOIN public.food_nutrients fn
+	ON f.id = fn.fdc_id
+JOIN public.nutrients n
+	ON fn.nutrient_id = n.id
+GROUP BY f.id;
