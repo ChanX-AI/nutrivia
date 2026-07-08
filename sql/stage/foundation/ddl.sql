@@ -11,7 +11,7 @@
 	Note: 
 		* All tables are loaded accordingly with the USDA food data after creation
 		* Manually a row with (id: 2066, name: 'UNKNOWN') is inserted in the public.nutrient
-    * Schemas are manually created
+    	* Schemas are manually created
 
 */
 
