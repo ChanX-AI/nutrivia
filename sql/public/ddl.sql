@@ -64,6 +64,7 @@ SELECT
 	MAX(CASE WHEN n.id = 1003 THEN fn.amount ELSE 0 END) AS protein_gm,
 	MAX(CASE WHEN n.id = 1005 THEN fn.amount ELSE 0 END) AS carbs_gm,
 	MAX(CASE WHEN n.id = 1004 THEN fn.amount ELSE 0 END) AS fats_gm,
+	MAX(CASE WHEN n.id = 1079 THEN fn.amount ELSE 0 END) AS fiber_gm,
 	MAX(CASE WHEN n.id = 2000 THEN fn.amount ELSE 0 END) AS sugar_gm,
 	MAX(CASE WHEN n.id = 1253 THEN fn.amount ELSE 0 END) AS cholesterol_mg,
 	MAX(CASE WHEN n.id = 1051 THEN fn.amount ELSE 0 END) AS water_gm
