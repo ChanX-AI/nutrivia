@@ -129,13 +129,3 @@ Detailed documentation is available inside the **docs** directory.
 - Health reports
 
 ---
-
-## License
-
-MIT License
-
----
-
-## Author
-
-Developed by Chandu
