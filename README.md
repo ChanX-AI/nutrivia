@@ -6,6 +6,22 @@ This project is designed as the backend data foundation for Nutrivia, a nutritio
 
 ---
 
+## High-Level Architecture
+
+![High Level Architecture](images/high-level-architecture.png)
+
+This architecture illustrates the flow of data from raw USDA datasets through the staging and production layers to the application and analytics components.
+
+---
+
+## Database ER Diagram
+
+![Database ER Diagram](images/er-diagram.png)
+
+The ER diagram shows the normalized relational schema, including primary key and foreign key relationships between core entities.
+
+---
+
 ## Project Goals
 
 The objective of this project is to transform raw USDA datasets into a clean, normalized, and scalable database suitable for real-world applications.
