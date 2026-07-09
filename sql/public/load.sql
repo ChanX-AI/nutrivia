@@ -5,7 +5,7 @@
 	-> All the core food tables are loaded
 	
 	** Warnings **
-		The truncate command is used before loading into table
+		The TRUNCATE command is used before loading into table
 */
 
 
