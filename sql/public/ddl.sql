@@ -4,20 +4,9 @@
 ================================================================
 	-> All the core food tables are created
 	
-	** Warnings **
-		The drop command is used before creating a table
+	** WARNINGS **
+		The DROP command is used before creating a table
 */
-
--- public nutrient
-DROP TABLE IF EXISTS public.nutrient;
-
-CREATE TABLE public.nutrient (
-    id integer PRIMARY KEY,
-    name text,
-    unit_name text,
-    nutrient_nbr text,
-    rank text
-);
 
 -- food data types
 DROP TABLE IF EXISTS public.food_data_types;
