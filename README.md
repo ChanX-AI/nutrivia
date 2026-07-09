@@ -8,7 +8,7 @@ This project is designed as the backend data foundation for Nutrivia, a nutritio
 
 ## High-Level Architecture
 
-![High Level Architecture](images/high-level-architecture.png)
+![High Level Architecture](images/architecture.png)
 
 This architecture illustrates the flow of data from raw USDA datasets through the staging and production layers to the application and analytics components.
 
@@ -16,7 +16,7 @@ This architecture illustrates the flow of data from raw USDA datasets through th
 
 ## Database ER Diagram
 
-![Database ER Diagram](images/er-diagram.png)
+![Database ER Diagram](images/data_model.png)
 
 The ER diagram shows the normalized relational schema, including primary key and foreign key relationships between core entities.
 
