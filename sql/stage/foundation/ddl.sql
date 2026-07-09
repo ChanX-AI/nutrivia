@@ -1,6 +1,6 @@
 /*
 ================================================================
-	Stage Layer foundation_stg
+	Stage Layer foundation
 ================================================================
 	-> All the core foundation food tables are created and loaded
 	
@@ -14,9 +14,9 @@
 
 
 -- food
-DROP TABLE IF EXISTS foundation_stg.food;
+DROP TABLE IF EXISTS foundation.food;
 
-CREATE TABLE foundation_stg.food (
+CREATE TABLE foundation.food (
     fdc_id integer PRIMARY KEY,
     data_type text,
     description text,
@@ -25,20 +25,20 @@ CREATE TABLE foundation_stg.food (
 );
 
 -- foundation food
-DROP TABLE IF EXISTS foundation_stg.foundation_food;
+DROP TABLE IF EXISTS foundation.foundation_food;
 
-CREATE TABLE foundation_stg.foundation_food (
-    fdc_id integer PRIMARY KEY REFERENCES foundation_stg.food (fdc_id),
+CREATE TABLE foundation.foundation_food (
+    fdc_id integer PRIMARY KEY REFERENCES foundation.food (fdc_id),
     ndb_number integer,
     foot_note text
 );
 
 -- food nutrient
-DROP TABLE IF EXISTS foundation_stg.food_nutrient;
+DROP TABLE IF EXISTS foundation.food_nutrient;
 
-CREATE TABLE foundation_stg.food_nutrient (
+CREATE TABLE foundation.food_nutrient (
     id integer PRIMARY KEY,
-    fdc_id integer REFERENCES foundation_stg.food (fdc_id),
+    fdc_id integer REFERENCES foundation.food (fdc_id),
     nutrient_id integer REFERENCES common.nutrient (id),
     amount numeric(8,2),
     data_point text,
