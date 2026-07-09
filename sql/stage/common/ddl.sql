@@ -1,11 +1,14 @@
 /*
   =========================================
-    Stage common
+    Stage Layer common
   =========================================
     -> tables that are common to stage foundation and stage sr legacy are created
 
     ** WARNINGS **
         * DROP command is used before creating tables
+
+  	Note: 
+  		* All tables are loaded accordingly with the USDA food data after creation
 */
 
 -- nutrient
