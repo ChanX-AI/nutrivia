@@ -9,13 +9,9 @@
 	
 	Note: 
 		* All tables are loaded accordingly with the USDA food data after creation
-    	* Schemas are manually created
-
 */
 
--- Schemas creation (public is in-built)
---CREATE SCHEMA IF NOT EXISTS foundation_stg;
---CREATE SCHEMA IF NOT EXISTS sr_legacy_stg;
+
 
 -- food
 DROP TABLE IF EXISTS foundation_stg.food;
