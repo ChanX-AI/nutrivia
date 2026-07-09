@@ -38,8 +38,8 @@ SELECT
 	TRIM(f.description) AS name,
 	f.food_category_id AS category_id,
 	1 AS data_type_id
-FROM foundation_stg.food f
-JOIN foundation_stg.foundation_food ff
+FROM foundation.food f
+JOIN foundation.foundation_food ff
 	ON f.fdc_id = ff.fdc_id
 UNION ALL
 SELECT
@@ -47,8 +47,8 @@ SELECT
 	TRIM(f.description) AS name,
 	f.food_category_id AS category_id,
 	2 AS data_type_id
-FROM sr_legacy_stg.food f
-JOIN sr_legacy_stg.sr_legacy_food sf
+FROM sr_legacy.food f
+JOIN sr_legacy.sr_legacy_food sf
 	ON f.fdc_id = sf.fdc_id;
 	
 -- core nutrients
@@ -72,10 +72,10 @@ SELECT
 	f.fdc_id AS food_id,
 	n.id AS nutrient_id,
 	fn.amount
-FROM foundation_stg.food f
-JOIN foundation_stg.foundation_food ff
+FROM foundation.food f
+JOIN foundation.foundation_food ff
 	ON f.fdc_id = ff.fdc_id
-JOIN foundation_stg.food_nutrient fn
+JOIN foundation.food_nutrient fn
 	ON f.fdc_id = fn.fdc_id
 JOIN public.core_nutrients n
 	ON fn.nutrient_id = n.id
@@ -84,10 +84,10 @@ SELECT
 	f.fdc_id AS food_id,
 	n.id AS nutrient_id,
 	fn.amount
-FROM sr_legacy_stg.food f
-JOIN sr_legacy_stg.sr_legacy_food sf
+FROM sr_legacy.food f
+JOIN sr_legacy.sr_legacy_food sf
 	ON f.fdc_id = sf.fdc_id
-JOIN sr_legacy_stg.food_nutrient fn
+JOIN sr_legacy.food_nutrient fn
 	ON f.fdc_id = fn.fdc_id
 JOIN public.core_nutrients n
 	ON fn.nutrient_id = n.id;
