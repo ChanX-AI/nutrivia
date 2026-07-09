@@ -18,6 +18,16 @@ VALUES
 (1, 'foundation'),
 (2, 'sr legacy');
 
+-- food categories
+-- ============================================================
+TRUNCATE TABLE public.food_categories;
+
+INSERT INTO public.food_categories
+SELECT
+	id,
+	TRIM(description) AS name
+FROM common.food_category;
+
 -- 	foods
 -- =============================================================
 TRUNCATE TABLE public.foods;
@@ -25,7 +35,7 @@ TRUNCATE TABLE public.foods;
 INSERT INTO public.foods
 SELECT
 	f.fdc_id AS id,
-	f.description AS name,
+	TRIM(f.description) AS name,
 	f.food_category_id AS category_id,
 	1 AS data_type_id
 FROM foundation_stg.food f
@@ -34,7 +44,7 @@ JOIN foundation_stg.foundation_food ff
 UNION ALL
 SELECT
 	f.fdc_id AS id,
-	f.description AS name,
+	TRIM(f.description) AS name,
 	f.food_category_id AS category_id,
 	2 AS data_type_id
 FROM sr_legacy_stg.food f
@@ -49,8 +59,8 @@ INSERT INTO public.core_nutrients
 SELECT
 	id,
 	name,
-	unit_name AS units
-FROM public.nutrient
+	TRIM(unit_name) AS units
+FROM common.nutrient
 WHERE id IN (1008, 1003, 1004, 1079, 2000, 1253, 1051, 1005);
 
 -- food nutrients
