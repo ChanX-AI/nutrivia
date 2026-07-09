@@ -12,6 +12,11 @@
       * nutrient table is loaded with extra record (2066, 'UNKNOWN', NULL, NULL, NULL)
 */
 
+-- Schemas creation (public is in-built)
+--CREATE SCHEMA IF NOT EXISTS foundation;
+--CREATE SCHEMA IF NOT EXISTS sr_legacy;
+--CREATE SCHEMA IF NOT EXISTS common;
+
 -- nutrient
 DROP TABLE IF EXISTS common.nutrient;
 
