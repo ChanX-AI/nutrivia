@@ -48,7 +48,9 @@ DROP TABLE IF EXISTS public.food_nutrients;
 CREATE TABLE public.food_nutrients (
 	food_id integer REFERENCES public.foods (id),
 	nutrient_id integer REFERENCES public.core_nutrients (id),
-	amount integer
+	amount NUMERIC(8, 2),
+
+	PRIMARY KEY (food_id, nutrient_id)
 );
 
 -- food info view
