@@ -56,6 +56,7 @@ CREATE TABLE public.food_nutrients (
 -- food info view
 
 CREATE VIEW public.vw_food_info
+AS
 SELECT 
 	f.id AS id, 
 	MAX(CASE WHEN n.id = 1008 THEN fn.amount END) AS energy_kcal,
@@ -67,7 +68,7 @@ SELECT
 	MAX(CASE WHEN n.id = 1051 THEN fn.amount END) AS water_gm
 FROM public.foods f
 JOIN public.food_nutrients fn
-	ON f.id = fn.fdc_id
-JOIN public.nutrients n
+	ON f.id = fn.food_id
+JOIN public.core_nutrients n
 	ON fn.nutrient_id = n.id
 GROUP BY f.id;
