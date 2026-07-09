@@ -30,7 +30,7 @@ FROM common.food_category;
 
 -- 	foods
 -- =============================================================
-TRUNCATE TABLE public.foods;
+TRUNCATE TABLE public.foods CASCADE;
 
 INSERT INTO public.foods
 SELECT
@@ -53,7 +53,7 @@ JOIN sr_legacy.sr_legacy_food sf
 	
 -- core nutrients
 -- =============================================================
-TRUNCATE TABLE public.core_nutrients;
+TRUNCATE TABLE public.core_nutrients CASCADE;
 
 INSERT INTO public.core_nutrients
 SELECT
