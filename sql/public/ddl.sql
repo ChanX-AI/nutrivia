@@ -54,18 +54,19 @@ CREATE TABLE public.food_nutrients (
 );
 
 -- food info view
+DROP VIEW IF EXISTS public.vw_food_info;
 
 CREATE VIEW public.vw_food_info
 AS
 SELECT 
 	f.id AS id, 
-	MAX(CASE WHEN n.id = 1008 THEN fn.amount END) AS energy_kcal,
-	MAX(CASE WHEN n.id = 1003 THEN fn.amount END) AS protein_gm,
-	MAX(CASE WHEN n.id = 1005 THEN fn.amount END) AS carbs_gm,
-	MAX(CASE WHEN n.id = 1004 THEN fn.amount END) AS fats_gm,
-	MAX(CASE WHEN n.id = 2000 THEN fn.amount END) AS sugar_gm,
-	MAX(CASE WHEN n.id = 1253 THEN fn.amount END) AS cholesterol_mg,
-	MAX(CASE WHEN n.id = 1051 THEN fn.amount END) AS water_gm
+	MAX(CASE WHEN n.id = 1008 THEN fn.amount ELSE 0 END) AS energy_kcal,
+	MAX(CASE WHEN n.id = 1003 THEN fn.amount ELSE 0 END) AS protein_gm,
+	MAX(CASE WHEN n.id = 1005 THEN fn.amount ELSE 0 END) AS carbs_gm,
+	MAX(CASE WHEN n.id = 1004 THEN fn.amount ELSE 0 END) AS fats_gm,
+	MAX(CASE WHEN n.id = 2000 THEN fn.amount ELSE 0 END) AS sugar_gm,
+	MAX(CASE WHEN n.id = 1253 THEN fn.amount ELSE 0 END) AS cholesterol_mg,
+	MAX(CASE WHEN n.id = 1051 THEN fn.amount ELSE 0 END) AS water_gm
 FROM public.foods f
 JOIN public.food_nutrients fn
 	ON f.id = fn.food_id
