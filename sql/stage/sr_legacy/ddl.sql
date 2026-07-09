@@ -1,6 +1,6 @@
 /*
 ================================================================
-	Stage Layer sr_legacy_stg
+	Stage Layer sr_legacy
 ================================================================
 	-> All the core sr legacy food tables are created and loaded
 	
@@ -13,9 +13,9 @@
 */
 
 -- food
-DROP TABLE IF EXISTS sr_legacy_stg.food;
+DROP TABLE IF EXISTS sr_legacy.food;
 
-CREATE TABLE sr_legacy_stg.food (
+CREATE TABLE sr_legacy.food (
     fdc_id integer PRIMARY KEY,
     data_type text,
     description text,
@@ -24,19 +24,19 @@ CREATE TABLE sr_legacy_stg.food (
 );
 
 -- sr_legacy food
-DROP TABLE IF EXISTS sr_legacy_stg.sr_legacy_food;
+DROP TABLE IF EXISTS sr_legacy.sr_legacy_food;
 
-CREATE TABLE sr_legacy_stg.sr_legacy_food (
-    fdc_id integer PRIMARY KEY REFERENCES sr_legacy_stg.food (fdc_id),
+CREATE TABLE sr_legacy.sr_legacy_food (
+    fdc_id integer PRIMARY KEY REFERENCES sr_legacy.food (fdc_id),
     ndb_number integer
 );
 
 -- food nutrient
-DROP TABLE IF EXISTS sr_legacy_stg.food_nutrient;
+DROP TABLE IF EXISTS sr_legacy.food_nutrient;
 
-CREATE TABLE sr_legacy_stg.food_nutrient (
+CREATE TABLE sr_legacy.food_nutrient (
     id integer PRIMARY KEY,
-    fdc_id integer REFERENCES sr_legacy_stg.food (fdc_id),
+    fdc_id integer REFERENCES sr_legacy.food (fdc_id),
     nutrient_id integer REFERENCES common.nutrient (id),
     amount numeric(8,2),
     data_point text,
