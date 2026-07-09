@@ -2,7 +2,7 @@
 
 A production-oriented PostgreSQL data platform for integrating, cleaning, and serving USDA FoodData Central datasets.
 
-This project is designed as the backend data foundation for a nutrition application capable of food search, nutrition analysis, health reporting, and future AI-powered food recommendations.
+This project is designed as the backend data foundation for Nutrivia, a nutrition application capable of food search, nutrition analysis, health reporting, and future AI-powered food recommendations.
 
 ---
 
@@ -37,7 +37,6 @@ The platform focuses on:
 | Technology | Purpose |
 |------------|---------|
 | PostgreSQL | Database |
-| pgSQL | Procedures & Functions |
 | Supabase | Database Hosting |
 | SQL | Data Processing |
 | GitHub | Repository |
@@ -59,12 +58,6 @@ USDA CSV Files
         ▼
  Stage Schema
 (Raw Data Import)
-        │
-        ▼
-Data Validation
-        │
-        ▼
-Transformation Procedures
         │
         ▼
 Public Schema
