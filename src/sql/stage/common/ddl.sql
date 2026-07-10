@@ -6,9 +6,8 @@
 
     ** WARNINGS **
         * DROP command is used before creating tables
-
-  	Note: 
-  		* All tables are loaded accordingly with the USDA food data after creation
+Note: 
+* All tables are loaded accordingly with the USDA food data after creation
    * nutrient table is loaded with extra record (2066, 'UNKNOWN', NULL, NULL, NULL)
 */
 
