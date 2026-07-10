@@ -29,8 +29,8 @@ DROP TABLE IF EXISTS foundation.foundation_food;
 
 CREATE TABLE foundation.foundation_food (
     fdc_id integer PRIMARY KEY REFERENCES foundation.food (fdc_id),
-    ndb_number integer,
-    foot_note text
+    NDB_number integer,
+    footnote text
 );
 
 -- food nutrient
@@ -41,11 +41,11 @@ CREATE TABLE foundation.food_nutrient (
     fdc_id integer REFERENCES foundation.food (fdc_id),
     nutrient_id integer REFERENCES common.nutrient (id),
     amount numeric(8,2),
-    data_point text,
+    data_points text,
     derivation_id text,
     min text,
     max text,
     median text,
-    foot_note text,
+    footnote text,
     min_year_acquired text
 );
