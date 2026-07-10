@@ -1,6 +1,6 @@
 # Nutrivia Food Data Platform
 
-A production-oriented PostgreSQL data platform for integrating, cleaning, and serving USDA FoodData Central datasets.
+A PostgreSQL data platform for integrating, cleaning, and serving USDA FoodData Central datasets.
 
 This project is designed as the backend data foundation for Nutrivia, a nutrition application capable of food search, nutrition analysis, health reporting, and future AI-powered food recommendations.
 
