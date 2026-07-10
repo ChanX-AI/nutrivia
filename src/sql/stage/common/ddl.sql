@@ -9,7 +9,7 @@
 
   	Note: 
   		* All tables are loaded accordingly with the USDA food data after creation
-   * nutrient table is loaded with extra record (2066, 'UNKNOWN', NULL, NULL, NULL)
+       * nutrient table is loaded with extra record (2066, 'UNKNOWN', NULL, NULL, NULL)
 */
 
 -- Schemas creation (public is in-built)
