@@ -9,7 +9,7 @@
 */
 
 
--- 	food data types
+-- food data types
 TRUNCATE TABLE public.food_data_types;
 
 INSERT INTO public.food_data_types
@@ -26,7 +26,7 @@ SELECT
 	TRIM(description) AS name
 FROM common.food_category;
 
--- 	foods
+-- foods
 TRUNCATE TABLE public.foods CASCADE;
 
 INSERT INTO public.foods
