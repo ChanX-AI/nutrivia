@@ -28,7 +28,7 @@ DROP TABLE IF EXISTS sr_legacy.sr_legacy_food;
 
 CREATE TABLE sr_legacy.sr_legacy_food (
     fdc_id integer PRIMARY KEY REFERENCES sr_legacy.food (fdc_id),
-    ndb_number integer
+    NDB_number integer
 );
 
 -- food nutrient
@@ -39,11 +39,11 @@ CREATE TABLE sr_legacy.food_nutrient (
     fdc_id integer REFERENCES sr_legacy.food (fdc_id),
     nutrient_id integer REFERENCES common.nutrient (id),
     amount numeric(8,2),
-    data_point text,
+    data_points text,
     derivation_id text,
     min text,
     max text,
     median text,
-    foot_note text,
+    footnote text,
     min_year_acquired text
 );
