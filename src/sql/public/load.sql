@@ -40,10 +40,10 @@ JOIN foundation.foundation_food ff
      ON f.fdc_id = ff.fdc_id
 UNION ALL
 SELECT
-	f.fdc_id AS id,
-	TRIM(f.description) AS name,
-	f.food_category_id AS category_id,
-	2 AS data_type_id
+     f.fdc_id AS id,
+     TRIM(f.description) AS name,
+     f.food_category_id AS category_id,
+     2 AS data_type_id
 FROM sr_legacy.food f
 JOIN sr_legacy.sr_legacy_food sf
      ON f.fdc_id = sf.fdc_id;
