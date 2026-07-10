@@ -22,8 +22,8 @@ TRUNCATE TABLE public.food_categories;
 
 INSERT INTO public.food_categories
 SELECT
-	id,
-	TRIM(description) AS name
+ id,
+ TRIM(description) AS name
 FROM common.food_category;
 
 -- foods
