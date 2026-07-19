@@ -8,7 +8,7 @@ This project is designed as the backend data foundation for Nutrivia, a nutritio
 
 ## High-Level Architecture
 
-![High Level Architecture](images/architecture.png)
+![High Level Architecture](docs/high_level_architecture.png)
 
 This architecture shows the flow of data from raw USDA datasets through the staging and production layers to the application and analytics components.
 
