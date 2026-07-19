@@ -33,17 +33,16 @@ The platform focuses on:
 - Normalized schema design
 - Scalable ETL pipelines
 - Scalable database architecture
+- Food embeddings using pgVector
 
 ---
 
 ## Features
 
 - Stage Layer for raw USDA data
-- Public Layer for cleaned production data
-- Views for simplified querying
-- Stored Procedures for data loading (future)
-- SQL Functions for querying (future)
-- Nutrient Normalization (future)
+- Transformation Layer for cleaned data
+- Core Layer for simplified querying
+- SQL Functions for querying
 
 
 ---
@@ -55,41 +54,17 @@ The platform focuses on:
 | PostgreSQL | Database |
 | Supabase | Database Hosting |
 | SQL | Data Processing |
+| pgVector | Embeddings generation |
 | GitHub | Repository |
 
 Future:
 
 - FastAPI
 - React
-- pgvector
 - AI Recommendation Engine
 
 ---
 
-## Architecture
-
-```
-USDA CSV Files
-        │
-        ▼
- Stage Schema
-(Raw Data Import)
-        │
-        ▼
-Public Schema
-(Clean Production Data)
-        │
-        ▼
-Views
-        │
-        ▼
-REST API
-        │
-        ▼
-Frontend
-```
-
----
 
 ## Data Sources
 
