@@ -16,9 +16,9 @@ This architecture shows the flow of data from raw USDA datasets through the stag
 
 ## Database ER Diagram
 
-![Database ER Diagram](images/data_model.png)
+![Database ER Diagram](docs/stage_schema.png)
 
-The ER diagram shows the normalized relational schema, including primary key and foreign key relationships between core entities.
+The ER diagram shows the normalized relational schema for staging layer, including primary key and foreign key relationships between core entities.
 
 ---
 
