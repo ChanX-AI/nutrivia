@@ -1,0 +1,8 @@
+/*
+	Schemas are created
+*/
+
+CREATE SCHEMA IF NOT EXISTS stg;
+CREATE SCHEMA IF NOT EXISTS tran;
+CREATE SCHEMA IF NOT EXISTS core;
+
